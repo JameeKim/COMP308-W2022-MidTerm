@@ -1,4 +1,4 @@
-// This is the version used by react-scripts
+// This is the version used by react-scripts (and vscode, unfortunately)
 {
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
@@ -9,11 +9,11 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx",
-    "baseUrl": "."
+    "jsx": "react-jsx"
   },
   "include": [
     "src",
+    "common",
     "app" // hack to enable ide functionalities
   ]
 }
