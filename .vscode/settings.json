@@ -1,0 +1,11 @@
+{
+  "[html]": {
+    "editor.rulers": [100]
+  },
+  "[typescript]": {
+    "editor.rulers": [100]
+  },
+  "[typescriptreact]": {
+    "editor.rulers": [100]
+  }
+}
