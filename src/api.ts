@@ -45,3 +45,16 @@ export const post = async <T>(
   });
   return await extractResult(response);
 };
+
+export const del = async (url: string, signal?: AbortSignal): Promise<number> => {
+  const response = await fetch(url, {
+    headers: {
+      "content-type": "application/json; charset=utf-8",
+      "x-http-method-override": "DELETE",
+    },
+    method: "POST",
+    signal,
+    body: "{}",
+  });
+  return response.status;
+};

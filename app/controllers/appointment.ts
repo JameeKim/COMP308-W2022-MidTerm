@@ -11,3 +11,33 @@ export const getAll = async (): Promise<WithId<AppointmentData>[]> => {
     return { _id: _id.toString(), cardNumber, vaccineSite, priorityArea, dateTime, cancelled };
   });
 };
+
+/**
+ * Save an appointment
+ *
+ * Returns any message if input is invalid
+ */
+export const addOne = async (input: unknown): Promise<string | null> => {
+  try {
+    const appt = new Appointment(input);
+    await appt.save();
+    return null;
+  } catch (e) {
+    console.error(e);
+    if (e instanceof Error) {
+      return `${e.name}: ${e.message}`;
+    } else {
+      return "Unknown error occurred";
+    }
+  }
+};
+
+/**
+ * Delete an appointment
+ *
+ * Returns if the one with the id actually existed
+ */
+export const deleteOne = async (id: string): Promise<boolean> => {
+  const res = await Appointment.deleteOne({ _id: id });
+  return res.deletedCount > 0;
+};
