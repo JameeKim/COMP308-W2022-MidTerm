@@ -18,7 +18,7 @@ export default function apiRouter(): Router {
   });
 
   // Routes for appointment CRUD
-  router.use("/appointment", appointment);
+  router.use("/appointment", appointment());
 
   return router;
 }

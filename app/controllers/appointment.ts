@@ -25,7 +25,7 @@ export const addOne = async (input: unknown): Promise<string | null> => {
   } catch (e) {
     console.error(e);
     if (e instanceof Error) {
-      return `${e.name}: ${e.message}`;
+      return `${e.message}`;
     } else {
       return "Unknown error occurred";
     }

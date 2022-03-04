@@ -5,7 +5,7 @@ export type ApiResult<T> =
   | { status: 400, error: string, message: string }
   | { status: number } & Record<string, any>;
 
-const parseBodyWhen: number[] = [200, 201, 400];
+const parseBodyWhen: number[] = [200, 400];
 
 const extractResult = async <T>(response: Response): Promise<ApiResult<T>> => {
   if (parseBodyWhen.includes(response.status)) {
