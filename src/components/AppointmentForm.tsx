@@ -87,15 +87,19 @@ export default function AppointmentForm(): JSX.Element {
         </td>
         <td>
           <div className="form-floating">
-            <input
-              type="text"
+            <select
               name="priorityArea"
               id="add-appt-priority"
               form={formId}
               className="form-control"
-              placeholder="Priority Area"
               disabled={pending}
-            />
+              defaultValue=""
+            >
+              <option value="">None</option>
+              <option value="80+">80+</option>
+              <option value="healthcare">Healthcare</option>
+              <option value="essential">Essential</option>
+            </select>
             <label htmlFor="add-appt-priority">Priority Area</label>
           </div>
         </td>
@@ -114,7 +118,7 @@ export default function AppointmentForm(): JSX.Element {
             <label htmlFor="add-appt-datetime">Date & Time</label>
           </div>
         </td>
-        <td>
+        <td className="text-center">
           <CancelledCheckbox
             name="cancelled"
             id="add-appt-cancelled"

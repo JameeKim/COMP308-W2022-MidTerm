@@ -31,7 +31,9 @@ export default function Appointment({ data }: AppointmentProps): JSX.Element {
       <td>{data.cardNumber}</td>
       <td>{data.vaccineSite}</td>
       <td>{data.priorityArea}</td>
-      <td>{data.dateTime.toLocaleString()}</td>
+      <td className={data.cancelled ? "text-muted text-decoration-line-through" : ""}>
+        {data.dateTime.toLocaleString()}
+      </td>
       <td className={`text-center text-${data.cancelled ? "danger" : "muted"}`}>
         {data.cancelled ? "Cancelled" : "-"}
       </td>
